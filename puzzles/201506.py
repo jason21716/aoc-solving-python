@@ -27,13 +27,17 @@ def main_1():
         e_x = int(command.group("E_X"))
         e_y = int(command.group("E_Y"))
 
-        for x in range(s_x, e_x + 1):
-            for y in range(s_y, e_y + 1):
-                if action == "turn on":
+        if action == "turn on":
+            for x in range(s_x, e_x + 1):
+                for y in range(s_y, e_y + 1):
                     matrix[x][y] = True
-                elif action == "turn off":
+        elif action == "turn off":
+            for x in range(s_x, e_x + 1):
+                for y in range(s_y, e_y + 1):
                     matrix[x][y] = False
-                elif action == "toggle":
+        elif action == "toggle":
+            for x in range(s_x, e_x + 1):
+                for y in range(s_y, e_y + 1):
                     matrix[x][y] = not matrix[x][y]
 
     lit_count = 0
@@ -56,13 +60,17 @@ def main_2():
         e_x = int(command.group("E_X"))
         e_y = int(command.group("E_Y"))
 
-        for x in range(s_x, e_x + 1):
-            for y in range(s_y, e_y + 1):
-                if action == "turn on":
+        if action == "turn on":
+            for x in range(s_x, e_x + 1):
+                for y in range(s_y, e_y + 1):
                     matrix[x][y] += 1
-                elif action == "turn off":
+        elif action == "turn off":
+            for x in range(s_x, e_x + 1):
+                for y in range(s_y, e_y + 1):
                     matrix[x][y] = 0 if matrix[x][y] == 0 else matrix[x][y] - 1
-                elif action == "toggle":
+        elif action == "toggle":
+            for x in range(s_x, e_x + 1):
+                for y in range(s_y, e_y + 1):
                     matrix[x][y] += 2
 
     lit_count = 0
